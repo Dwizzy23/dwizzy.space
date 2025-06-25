@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sesje & Mixy - Twoje Imię</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px auto;
+      background-color: black;
+      display: block;
+      object-fit: contain;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #00b894;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: #019875;
+    }
+    .section {
+      margin: 30px 0;
+    }
+    img, audio {
+      max-width: 90%;
+      margin: 10px 0;
+    }
+    .links a {
+      color: #00b894;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      max-width: 80%;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="Logo" class="logo" />
+
+  <h1>Twoje Imię | Mixy & Sesje</h1>
+
+  <div class="section">
+    <p>Cześć! Tu możesz umówić się na sesję, posłuchać miksów i zobaczyć moje prace.</p>
+    <a href="https://link-do-rezerwacji" class="btn" target="_blank" rel="noopener noreferrer">Umów Sesję</a>
+  </div>
+
+  <div class="section">
+    <h2>Zapisz się na sesję i nowości</h2>
+    <form action="https://dweezy.pl/subscribe" method="POST" target="_blank">
+      <input type="email" name="email" placeholder="Twój e-mail" required />
+      <button type="submit" class="btn">Zapisz się</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>Opinie</h2>
+    <p>⭐⭐⭐⭐⭐ "Profeska, świetne brzmienie!"</p>
+    <p>⭐⭐⭐⭐⭐ "Mega vibe, polecam!"</p>
+  </div>
+
+  <div class="section">
+    <h2>Posłuchaj miksów</h2>
+    <audio controls>
+      <source src="link-do-twojego-mixu.mp3" type="audio/mpeg" />
+      Twoja przeglądarka nie obsługuje audio.
+    </audio>
+  </div>
+
+  <div class="section">
+    <h2>Moje Grafiki</h2>
+    <img src="link-do-twojej-grafiki.jpg" alt="Grafika" />
+  </div>
+
+  <div class="section links">
+    <h2>Znajdź mnie</h2>
+    <a href="https://instagram.com/twojprofil" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://soundcloud.com/twojprofil" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+    <a href="mailto:twojemail@mail.com">E-mail</a>
+  </div>
+
+</body>
+</html>
