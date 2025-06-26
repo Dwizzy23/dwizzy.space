@@ -18,3 +18,14 @@ footer a img {
 footer a img:hover {
     transform: scale(1.2);
 }
+
+
+img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
