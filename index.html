@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sesje we Flightcorze! & Mixy - Dwizzy</title>
@@ -19,10 +14,11 @@
       padding: 20px;
     }
 
-    h1 {
+    h1, h2 {
       margin-top: 0;
       margin-bottom: 10px;
     }
+
     .btn {
       display: inline-block;
       margin: 10px;
@@ -32,218 +28,174 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      transition: background-color 0.3s;
       cursor: pointer;
       border: none;
+      transition: background-color 0.3s;
     }
+
     .btn:hover {
       background: #019875;
     }
+
     .section {
-      margin: 30px 0;
+      margin: 40px 0;
     }
-    img,
-    audio {
+
+    audio, iframe, img {
       max-width: 90%;
       margin: 10px 0;
     }
-    .links a {
-      color: #00b894;
-      text-decoration: none;
-      margin: 0 10px;
+
+    ul#playlist {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      max-width: 80%;
-      margin: 10px 0;
+
+    ul#playlist li {
+      padding: 8px 12px;
+      margin: 4px 0;
+      background: #333;
       border-radius: 5px;
-      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
+
+    ul#playlist li:hover {
+      background: #00b894;
+      color: #000;
+    }
+
     footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #000;
+      background: #000;
+      padding: 20px;
     }
+
+    .footer-social {
+      margin-top: 10px;
+    }
+
     .footer-social a {
       margin: 0 10px;
       display: inline-block;
     }
+
     .social-icon {
       width: 30px;
       height: 30px;
-      filter: brightness(0) invert(1);
+      filter: invert(100%);
       transition: filter 0.3s;
     }
+
     .social-icon:hover {
-      filter: brightness(0.7) invert(0.8);
+      filter: brightness(0.7);
     }
   </style>
 </head>
 <body>
-  <h1> 🧩 Sesje we Flightcore Studios & Mix/Master 🎧 </h1>
+  <h1>🧩 Sesje we Flightcore Studios & Mix/Master 🎧</h1>
 
   <div class="section">
     <p>Cześć! Tu możesz umówić się na sesję, posłuchać miksów i zobaczyć moje prace.</p>
-    <a
-      href="https://flightcore.dwizzy.space"
-      class="btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Umów Sesję w studio z Dwizzym</a
-    >
+    <a href="https://flightcore.dwizzy.space" class="btn" target="_blank">Umów Sesję w studio z Dwizzym</a>
   </div>
 
   <div class="section">
-    <h2>Artyści z którymi wspołpracowałem</h2>
+    <h2>Artyści z którymi współpracowałem</h2>
   </div>
 
+  <!-- Przykładowe miksy -->
   <div class="section">
-    <h2>
-      RUSINA - LOYALTY MIXTAPE | FEAT VKIE | PROD LEARNHOWTOHUSTLE, LISTER,
-      DODOWHATSTHEWORD
-    </h2>
-
-    <iframe
-      width="70%"
-      height="650"
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-    ></iframe>
-    <div
-      style="
-        font-size: 10px;
-        color: #cccccc;
-        line-break: anywhere;
-        word-break: normal;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-          Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-        font-weight: 100;
-      "
-    >
-      <a
-        href="https://soundcloud.com/rusina-sheder-fan"
-        title="Rusina Sheder Fan"
-        target="_blank"
-        style="color: #cccccc; text-decoration: none"
-        >Rusina Sheder Fan</a
-      >
-      ·
-      <a
-        href="https://soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape"
-        title="RUSINA - LOYALTY MIXTAPE"
-        target="_blank"
-        style="color: #cccccc; text-decoration: none"
-        >RUSINA - LOYALTY MIXTAPE</a
-      >
-    </div>
+    <h2>RUSINA - LOYALTY MIXTAPE</h2>
+    <iframe width="70%" height="650" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&show_comments=true&visual=true"></iframe>
   </div>
 
   <div class="section">
     <h2>SHEDER & MVTI - TONĘ prod UK</h2>
     <audio controls>
-      <source
-        src="https://www.dropbox.com/scl/fi/rkbcpcdc8t8o37qpu1o4a/sheder-mvti-tone-prod.-uk-mastered.wav?rlkey=dg35bdmxcwehrk49i6h1yuk48&st=a30iccwv&raw=1"
-        type="audio/wav"
-      />
-      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+      <source src="https://www.dropbox.com/scl/fi/rkbcpcdc8t8o37qpu1o4a/sheder-mvti-tone-prod.-uk-mastered.wav?raw=1" type="audio/wav">
     </audio>
   </div>
 
   <div class="section">
     <h2>KOSJUSZ & FEKIR - PSYCHOPATA</h2>
     <audio controls>
-      <source
-        src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master-i-zespojenie-calego-numeru-zeby-jakos-brzmial-XD.wav?rlkey=98u7wm3wicxivbup8dqzlxil9&st=lnqic2bj&raw=1"
-        type="audio/wav"
-      />
-      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+      <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master.wav?raw=1" type="audio/wav">
     </audio>
   </div>
 
   <div class="section">
     <h2>KOSJUSZ - DLACZEGO</h2>
     <audio controls>
-      <source
-        src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?rlkey=h24rgd94ftz2132dh7rdn0zrq&st=5v196yxq&raw=1"
-        type="audio/wav"
-      />
-      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+      <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?raw=1" type="audio/wav">
     </audio>
   </div>
 
+  <!-- Opinie -->
   <div class="section">
     <h2>⭐ OPINIE ⭐</h2>
-    <img
-      src="https://i.ibb.co/bMTWP8cR/opinia1.png"
-      alt="opinia 1"
-    />
-    <img
-      src="https://i.ibb.co/QFRr57HL/opinia2.png"
-      alt="opinia 2"
-    />
-    <img
-      src="https://i.ibb.co/6zZm0BC/opinia3.png"
-      alt="opinia 3"
-    />
+    <img src="https://i.ibb.co/bMTWP8cR/opinia1.png" alt="opinia 1" />
+    <img src="https://i.ibb.co/QFRr57HL/opinia2.png" alt="opinia 2" />
+    <img src="https://i.ibb.co/6zZm0BC/opinia3.png" alt="opinia 3" />
   </div>
 
-  <div class="section links">
-    <h2>📱 Kontakt 📱</h2>
-    <p>
-      Email:
-      <a
-        href="mailto:kontakt@dwizzy.space"
-        style="color: #00b894; text-decoration: none"
-        >kontakt@dwizzy.space</a
-      >
-    </p>
+  <!-- NOWA PLAYLISTA 26 UTWORÓW -->
+  <div class="section" style="background:#222; padding:20px; border-radius:10px;">
+    <h2>RUSINA - LOYALTY MIXTAPE feat VKIE | prod Learnhowtohustle, Lister, Dodowhatstheword</h2>
+    <ul id="playlist">
+      <li onclick="playTrack('track1.mp3')">1. Tytuł utworu 1</li>
+      <li onclick="playTrack('track2.mp3')">2. Tytuł utworu 2</li>
+      <li onclick="playTrack('track3.mp3')">3. Tytuł utworu 3</li>
+      <li onclick="playTrack('track4.mp3')">4. Tytuł utworu 4</li>
+      <li onclick="playTrack('track5.mp3')">5. Tytuł utworu 5</li>
+      <li onclick="playTrack('track6.mp3')">6. Tytuł utworu 6</li>
+      <li onclick="playTrack('track7.mp3')">7. Tytuł utworu 7</li>
+      <li onclick="playTrack('track8.mp3')">8. Tytuł utworu 8</li>
+      <li onclick="playTrack('track9.mp3')">9. Tytuł utworu 9</li>
+      <li onclick="playTrack('track10.mp3')">10. Tytuł utworu 10</li>
+      <li onclick="playTrack('track11.mp3')">11. Tytuł utworu 11</li>
+      <li onclick="playTrack('track12.mp3')">12. Tytuł utworu 12</li>
+      <li onclick="playTrack('track13.mp3')">13. Tytuł utworu 13</li>
+      <li onclick="playTrack('track14.mp3')">14. Tytuł utworu 14</li>
+      <li onclick="playTrack('track15.mp3')">15. Tytuł utworu 15</li>
+      <li onclick="playTrack('track16.mp3')">16. Tytuł utworu 16</li>
+      <li onclick="playTrack('track17.mp3')">17. Tytuł utworu 17</li>
+      <li onclick="playTrack('track18.mp3')">18. Tytuł utworu 18</li>
+      <li onclick="playTrack('track19.mp3')">19. Tytuł utworu 19</li>
+      <li onclick="playTrack('track20.mp3')">20. Tytuł utworu 20</li>
+      <li onclick="playTrack('track21.mp3')">21. Tytuł utworu 21</li>
+      <li onclick="playTrack('track22.mp3')">22. Tytuł utworu 22</li>
+      <li onclick="playTrack('track23.mp3')">23. Tytuł utworu 23</li>
+      <li onclick="playTrack('track24.mp3')">24. Tytuł utworu 24</li>
+      <li onclick="playTrack('track25.mp3')">25. Tytuł utworu 25</li>
+      <li onclick="playTrack('track26.mp3')">26. Tytuł utworu 26</li>
+    </ul>
+    <audio id="player" controls style="margin-top: 20px; width: 100%;"></audio>
   </div>
 
-  <footer>
-    <div class="footer-social">
-      <a
-        href="https://instagram.com/@dwizzy23_"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://e7.pngegg.com/pngimages/277/523/png-clipart-instagram-logo-illustration-snitz-creek-brewery-logo-computer-icons-ig-miscellaneous-text-thumbnail.png"
-          alt="Instagram"
-          class="social-icon"
-        />
-      </a>
-      <a
-        href="https://youtube.com/@dwizzy23_i"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://similarpng.com/_next/image?url=https%3A%2F%2Fimage.similarpng.com%2Ffile%2Fsimilarpng%2Fvery-thumbnail%2F2021%2F10%2FYoutube-icon-design-on-transparent-background-PNG.png&w=3840&q=75"
-          alt="YouTube"
-          class="social-icon"
-        />
-      </a>
-      <a
-        href="https://www.tiktok.com/@dwizzy23_"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://www.cdnlogo.com/logos/t/46/tiktok-icon-black.svg"
-          alt="TikTok"
-          class="social-icon"
-        />
-      </a>
-    </div>
-  </footer>
-</body>
-</html>
+<!-- Kontakt -->
+<footer>
+  <h2>Kontakt</h2>
+  <p>Masz pytania? Skontaktuj się ze mną:</p>
+
+  <p>
+    <a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">
+      kontakt@dwizzy.space
+    </a>
+  </p>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/@dwizzy23_" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon" />
+    </a>
+    <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon" />
+    </a>
+    <a href="https://www.youtube.com/@dwizzy23_i" target="_blank" title="YouTube">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon" />
+    </a>
+  </div>
+</footer>
