@@ -56,4 +56,10 @@ footer a img:hover {
   transform: scale(1.2);
 }
 
+ul#playlist li.active {
+  background: #019875;
+  color: #fff;
+  font-weight: bold;
+}
+
 
