@@ -96,7 +96,48 @@
 </head>
   
 
+  <<audio id="audio-player" controls style="margin: 20px auto; display: block;"></audio>
 
+<ul id="playlist" style="list-style:none; padding:0; max-width:600px; margin:0 auto; text-align:left;">
+  <li onclick="playTrack('biore to co moje.mp3')">BIORE TO CO MOJE</li>
+  <li onclick="playTrack('bugatti.mp3')">BUGATTI</li>
+  <li onclick="playTrack('chce zaczerpnac mej mlodosci.mp3')">CHCE ZACZERPNAC MEJ MŁODOŚCI</li>
+  <li onclick="playTrack('gdzie jest.mp3')">GDZIE JEST</li>
+  <li onclick="playTrack('gruba ryba.mp3')">GRUBA RYBA</li>
+  <li onclick="playTrack('hellcat.mp3')">HELLCAT</li>
+  <li onclick="playTrack('hold my hand.mp3')">HOLD MY HAND</li>
+  <li onclick="playTrack('jezyk mlodziezy.mp3')">JĘZYK MŁODZIEŻY</li>
+  <li onclick="playTrack('moze jakos.mp3')">MOŻE JAKOŚ</li>
+  <li onclick="playTrack('na wieki.mp3')">NA WIEKI</li>
+  <li onclick="playTrack('nie ma mnie.mp3')">NIE MA MNIE</li>
+  <li onclick="playTrack('nieaktywny.mp3')">NIEAKTYWNY</li>
+  <li onclick="playTrack('niech opuszcza mnie nalogi.mp3')">NIECH OPUSZCZĄ MNIE NAŁOGI</li>
+  <li onclick="playTrack('ona krzyczy.mp3')">ONA KRZYCZY</li>
+  <li onclick="playTrack('padnij.mp3')">PADNIJ</li>
+  <li onclick="playTrack('pusta kieszen.mp3')">PUSTA KIESZEŃ</li>
+  <li onclick="playTrack('serie a.mp3')">SERIE A</li>
+  <li onclick="playTrack('slajmy.mp3')">SŁAJMY</li>
+  <li onclick="playTrack('spoko.mp3')">SPOKO</li>
+  <li onclick="playTrack('szkoda ze nie moge sie zatrzymac.mp3')">SZKODA, ŻE NIE MOGĘ SIĘ ZATRZYMAĆ</li>
+  <li onclick="playTrack('we the sqqquad ft vkie.mp3')">WE THE SQQQUAD FT VKIE</li>
+  <li onclick="playTrack('wiem gdzie lezy blad.mp3')">WIEM GDZIE LEŻY BŁĄD</li>
+  <li onclick="playTrack('wychodze z niczym.mp3')">WYCHODZĘ Z NICZYM</li>
+  <li onclick="playTrack('zapach.mp3')">ZAPACH</li>
+  <li onclick="playTrack('zwierze.mp3')">ZWIERZĘ</li>
+  <li onclick="playTrack('ze tak nisko juz upadlem mixed.mp3')">ŻE TAK NISKO JUŻ UPADŁEM</li>
+</ul>
+
+<script>
+  function playTrack(filename) {
+    const audioPlayer = document.getElementById('audio-player');
+    if (!audioPlayer) {
+      alert('Odtwarzacz audio nie znaleziony!');
+      return;
+    }
+    audioPlayer.src = filename;
+    audioPlayer.play();
+  }
+</script>
 
 <body>
   
@@ -133,49 +174,6 @@
     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&show_comments=true&visual=true"></iframe>
 </div>
 
-    
-<audio id="audio-player" controls style="margin: 20px auto; display: block;"></audio>
-
-<ul id="playlist" style="list-style:none; padding:0; max-width:600px; margin:0 auto; text-align:left;">
-  <li onclick="playTrack('biore to co moje.ogg')">BIORE TO CO MOJE</li>
-  <li onclick="playTrack('bugatti.ogg')">BUGATTI</li>
-  <li onclick="playTrack('chce zaczerpnac mej mlodosci.ogg')">CHCE ZACZERPNAC MEJ MŁODOŚCI</li>
-  <li onclick="playTrack('gdzie jest.ogg')">GDZIE JEST</li>
-  <li onclick="playTrack('gruba ryba.ogg')">GRUBA RYBA</li>
-  <li onclick="playTrack('hellcat.ogg')">HELLCAT</li>
-  <li onclick="playTrack('hold my hand.ogg')">HOLD MY HAND</li>
-  <li onclick="playTrack('jezyk mlodziezy.ogg')">JĘZYK MŁODZIEŻY</li>
-  <li onclick="playTrack('moze jakos.ogg')">MOŻE JAKOŚ</li>
-  <li onclick="playTrack('na wieki.ogg')">NA WIEKI</li>
-  <li onclick="playTrack('nie ma mnie.ogg')">NIE MA MNIE</li>
-  <li onclick="playTrack('nieaktywny.ogg')">NIEAKTYWNY</li>
-  <li onclick="playTrack('niech opuszcza mnie nalogi.ogg')">NIECH OPUSZCZĄ MNIE NAŁOGI</li>
-  <li onclick="playTrack('ona krzyczy.ogg')">ONA KRZYCZY</li>
-  <li onclick="playTrack('padnij.ogg')">PADNIJ</li>
-  <li onclick="playTrack('pusta kieszen.ogg')">PUSTA KIESZEŃ</li>
-  <li onclick="playTrack('serie a.ogg')">SERIE A</li>
-  <li onclick="playTrack('slajmy.ogg')">SŁAJMY</li>
-  <li onclick="playTrack('spoko.ogg')">SPOKO</li>
-  <li onclick="playTrack('szkoda ze nie moge sie zatrzymac.ogg')">SZKODA, ŻE NIE MOGĘ SIĘ ZATRZYMAĆ</li>
-  <li onclick="playTrack('we the sqqquad ft vkie.ogg')">WE THE SQQQUAD FT VKIE</li>
-  <li onclick="playTrack('wiem gdzie lezy blad.ogg')">WIEM GDZIE LEŻY BŁĄD</li>
-  <li onclick="playTrack('wychodze z niczym.ogg')">WYCHODZĘ Z NICZYM</li>
-  <li onclick="playTrack('zapach.ogg')">ZAPACH</li>
-  <li onclick="playTrack('zwierze.ogg')">ZWIERZĘ</li>
-  <li onclick="playTrack('ze tak nisko juz upadlem mixed.ogg')">ŻE TAK NISKO JUŻ UPADŁEM</li>
-</ul>
-
-<script>
-  function playTrack(filename) {
-    const audioPlayer = document.getElementById('audio-player');
-    if (!audioPlayer) {
-      alert('Odtwarzacz audio nie znaleziony!');
-      return;
-    }
-    audioPlayer.src = filename;
-    audioPlayer.play();
-  }
-</script>
 
   <!-- Przykładowe miksy -->
   <style>
