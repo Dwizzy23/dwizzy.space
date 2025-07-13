@@ -95,6 +95,20 @@
   </style>
 </head>
 <body>
+
+  <script>
+  function playTrack(filename) {
+    const audioPlayer = document.getElementById('audio-player');
+    if (!audioPlayer) {
+      // Jeśli nie ma odtwarzacza globalnego, możesz go stworzyć lub odtworzyć lokalny
+      alert('Odtwarzacz audio nie znaleziony!');
+      return;
+    }
+    audioPlayer.src = filename;
+    audioPlayer.play();
+  }
+</script>
+  
   <h1>🧩 Sesje we Flightcore Studios & Mix/Master 🎧</h1>
 
   <div class="section">
@@ -221,10 +235,11 @@
     <h2 class="artist-name">KOSJUSZ & FEKIR - PSYCHOPATA</h2>
     <div class="artist-links">
       <a href="https://instagram.com/kosjusz" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-             <a href="https://instagram.com/fekirski" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
+  <img src="..." alt="Instagram" />
+  <a href="https://instagram.com/fekirski" target="_blank" rel="noopener noreferrer">
+    <img src="..." alt="Instagram" />
+  </a>
+</a>
       <a href="https://open.spotify.com/artist/zzz" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
       </a>
