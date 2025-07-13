@@ -107,33 +107,127 @@
   </div>
 
   <!-- Przykładowe miksy -->
-  <div class="section">
-    <h2>RUSINA - LOYALTY MIXTAPE</h2>
-    <iframe width="70%" height="650" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&show_comments=true&visual=true"></iframe>
-  </div>
+  <style>
+  .artist-links {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
 
-  <div class="section">
-    <h2>SHEDER & MVTI - TONĘ prod UK</h2>
-    <audio controls>
-      <source src="https://www.dropbox.com/scl/fi/rkbcpcdc8t8o37qpu1o4a/sheder-mvti-tone-prod.-uk-mastered.wav?raw=1" type="audio/wav">
-    </audio>
-  </div>
+  .artist-name:hover + .artist-links,
+  .artist-links:hover {
+    opacity: 1;
+  }
 
-  <div class="section">
-    <h2>KOSJUSZ & FEKIR - PSYCHOPATA</h2>
-    <audio controls>
-      <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master.wav?raw=1" type="audio/wav">
-    </audio>
-  </div>
-  <img src="https://i.ibb.co/7tCqggBL/image.png" alt="VIEWS SPOTIFY KOSJUSZ FEKIR" />
+  .artist-links a img {
+    width: 20px;
+    height: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
 
-  <div class="section">
-    <h2>KOSJUSZ - DLACZEGO</h2>
-    <audio controls>
-      <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?raw=1" type="audio/wav">
-    </audio>
+  .artist-links a:hover img {
+    filter: none;
+    transform: scale(1.2);
+  }
+
+  .artist-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+</style>
+
+<div class="section">
+  <div class="artist-container">
+    <h2 class="artist-name">RUSINA - LOYALTY MIXTAPE</h2>
+    <div class="artist-links">
+      <a href="https://instagram.com/rusinarusinarusina" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="https://open.spotify.com/artist/5QQGdYIcd5A2PRcG42eNdQ" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
+      </a>
+      <a href="https://www.youtube.com/@rusinarusinarusina" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+    </div>
   </div>
+  <iframe width="70%" height="650" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&show_comments=true&visual=true"></iframe>
+</div>
+
+<div class="section">
+  <div class="artist-container">
+    <h2 class="artist-name">SHEDER & MVTI - TONĘ prod UK</h2>
+    <div class="artist-links">
+      <a href="https://instagram.com/sheder_7" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="https://open.spotify.com/artist/4hoQxNaXyp8gVSynuqDQOt?si=Os6Kjz81QIujnt253E1SAQ" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
+      </a>
+      <a href="http://youtube.com/@SHEDER7" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+    </div>
+  </div>
+  <audio controls>
+    <source src="https://www.dropbox.com/scl/fi/rkbcpcdc8t8o37qpu1o4a/sheder-mvti-tone-prod.-uk-mastered.wav?raw=1" type="audio/wav">
+  </audio>
+</div>
+
+<div class="section">
+  <div class="artist-container">
+    <h2 class="artist-name">KOSJUSZ & FEKIR - PSYCHOPATA</h2>
+    <div class="artist-links">
+      <a href="https://instagram.com/kosjusz" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+             <a href="https://instagram.com/fekirski" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="https://open.spotify.com/artist/zzz" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
+      </a>
+      <a href="https://www.youtube.com/@65kosa" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        <a href="https://www.youtube.com/@fekirski" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+    </div>
+  </div>
+  <audio controls>
+    <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master.wav?raw=1" type="audio/wav">
+  </audio>
+</div>
+
+<img src="https://i.ibb.co/7tCqggBL/image.png" alt="VIEWS SPOTIFY KOSJUSZ FEKIR" />
+
+<div class="section">
+  <div class="artist-container">
+    <h2 class="artist-name">KOSJUSZ - DLACZEGO</h2>
+    <div class="artist-links">
+      <a href="https://instagram.com/kosjusz" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="https://open.spotify.com/artist/3emdMklnOiAGEhBHXf2PxP" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
+      </a>
+      <a href="https://www.youtube.com/@65kosa" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+    </div>
+  </div>
+  <audio controls>
+    <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?raw=1" type="audio/wav">
+  </audio>
+</div>
+
 
   <!-- Opinie -->
   <div class="section">
