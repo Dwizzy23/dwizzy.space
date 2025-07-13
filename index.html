@@ -95,30 +95,29 @@
   </style>
 </head>
 
-<audio id="audio-player" controls style="margin: 20px auto; display: block;"></audio>
+<audio id="audio-player" controls style="margin: 20px auto; display: block; width: 100%; max-width: 600px;"></audio>
 
 <ul id="playlist" style="list-style:none; padding:0; max-width:600px; margin:0 auto; text-align:left;">
-  <li onclick="playTrack('1iCVPoNmu70FLPY6stwFWvImt7Q3w7Zpy')">CHCE ZACZERPNAC MEJ MŁODOŚCI</li>
-  <li onclick="playTrack('16OnDxOWZ6Ns5iqUZmRDD-KWBV-OPOzT5')">GDZIE JEST</li>
-  <li onclick="playTrack('15QVafz1axYYMBfkfep0PZiZeRP5FC6gF')">GRUBA RYBA</li>
+  <li onclick="playTrack('https://www.dropbox.com/scl/fi/x46bwrqwmc5ryalsf1tr6/CHCE-ZACZERPNAC-MEJ-M-ODO-CI-MIXED.mp3?dl=1', this)">CHCE ZACZERPNĄĆ MEJ MŁODOŚCI</li>
+  <li onclick="playTrack('https://www.dropbox.com/scl/fi/r8f9rxw52ekliiecuw3ie/GDZIE-JEST-RUSINA-MIXED.mp3?dl=1', this)">GDZIE JEST RUSINA</li>
+  <li onclick="playTrack('https://www.dropbox.com/scl/fi/s3ykhb74ofn8xnn19w3eo/GRUBA-RYBA-RUSINA.mp3?dl=1', this)">GRUBA RYBA</li>
 </ul>
 
 <script>
-  function playTrack(fileId) {
+  function playTrack(url, element) {
     const audioPlayer = document.getElementById('audio-player');
-    const url = `https://docs.google.com/uc?export=download&id=${fileId}`;
     audioPlayer.src = url;
     audioPlayer.play();
 
-    // Podświetlanie aktywnego utworu
+    // Usuń podświetlenie ze wszystkich elementów listy
     const items = document.querySelectorAll('#playlist li');
-    items.forEach(item => item.style.fontWeight = 'normal');
-    const clickedItem = event.target;
-    if (clickedItem.tagName === 'LI') {
-      clickedItem.style.fontWeight = 'bold';
-    }
+    items.forEach(item => item.style.background = '');
+
+    // Podświetl aktualnie odtwarzany utwór
+    element.style.background = '#ddd';
   }
 </script>
+
 
 
 <body>
