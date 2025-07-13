@@ -94,13 +94,42 @@
     }
   </style>
 </head>
-<body>
 
-  <script>
+<audio id="audio-player" controls style="margin: 20px auto; display: block;"></audio>
+
+<ul id="playlist" style="list-style:none; padding:0; max-width:600px; margin:0 auto; text-align:left;">
+  <li onclick="playTrack('biore to co moje.ogg')">BIORE TO CO MOJE</li>
+  <li onclick="playTrack('bugatti.ogg')">BUGATTI</li>
+  <li onclick="playTrack('chce zaczerpnac mej mlodosci.ogg')">CHCE ZACZERPNAC MEJ MŁODOŚCI</li>
+  <li onclick="playTrack('gdzie jest.ogg')">GDZIE JEST</li>
+  <li onclick="playTrack('gruba ryba.ogg')">GRUBA RYBA</li>
+  <li onclick="playTrack('hellcat.ogg')">HELLCAT</li>
+  <li onclick="playTrack('hold my hand.ogg')">HOLD MY HAND</li>
+  <li onclick="playTrack('jezyk mlodziezy.ogg')">JĘZYK MŁODZIEŻY</li>
+  <li onclick="playTrack('moze jakos.ogg')">MOŻE JAKOŚ</li>
+  <li onclick="playTrack('na wieki.ogg')">NA WIEKI</li>
+  <li onclick="playTrack('nie ma mnie.ogg')">NIE MA MNIE</li>
+  <li onclick="playTrack('nieaktywny.ogg')">NIEAKTYWNY</li>
+  <li onclick="playTrack('niech opuszcza mnie nalogi.ogg')">NIECH OPUSZCZĄ MNIE NAŁOGI</li>
+  <li onclick="playTrack('ona krzyczy.ogg')">ONA KRZYCZY</li>
+  <li onclick="playTrack('padnij.ogg')">PADNIJ</li>
+  <li onclick="playTrack('pusta kieszen.ogg')">PUSTA KIESZEŃ</li>
+  <li onclick="playTrack('serie a.ogg')">SERIE A</li>
+  <li onclick="playTrack('slajmy.ogg')">SŁAJMY</li>
+  <li onclick="playTrack('spoko.ogg')">SPOKO</li>
+  <li onclick="playTrack('szkoda ze nie moge sie zatrzymac.ogg')">SZKODA, ŻE NIE MOGĘ SIĘ ZATRZYMAĆ</li>
+  <li onclick="playTrack('we the sqqquad ft vkie.ogg')">WE THE SQQQUAD FT VKIE</li>
+  <li onclick="playTrack('wiem gdzie lezy blad.ogg')">WIEM GDZIE LEŻY BŁĄD</li>
+  <li onclick="playTrack('wychodze z niczym.ogg')">WYCHODZĘ Z NICZYM</li>
+  <li onclick="playTrack('zapach.ogg')">ZAPACH</li>
+  <li onclick="playTrack('zwierze.ogg')">ZWIERZĘ</li>
+  <li onclick="playTrack('ze tak nisko juz upadlem mixed.ogg')">ŻE TAK NISKO JUŻ UPADŁEM</li>
+</ul>
+
+<script>
   function playTrack(filename) {
     const audioPlayer = document.getElementById('audio-player');
     if (!audioPlayer) {
-      // Jeśli nie ma odtwarzacza globalnego, możesz go stworzyć lub odtworzyć lokalny
       alert('Odtwarzacz audio nie znaleziony!');
       return;
     }
@@ -108,6 +137,9 @@
     audioPlayer.play();
   }
 </script>
+
+
+<body>
   
   <h1>🧩 Sesje we Flightcore Studios & Mix/Master 🎧</h1>
 
