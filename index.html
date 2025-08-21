@@ -7,7 +7,23 @@
   <style>
     /* Reset i podstawy */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+
+      /* Wyśrodkowanie całej zawartości */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
     
     /* Header */
     header { background: #111; padding: 2rem; text-align: center; }
@@ -48,6 +64,8 @@
 </head>
 <body>
 
+  <div class="container">
+
   <!-- HEADER -->
   <header>
     <h1>Dwizzy</h1>
@@ -61,7 +79,7 @@
     <p><a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">kontakt@dwizzy.space soon!</a></p>
 
     <div class="footer-social">
-      <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
+      <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
       </a>
       <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
@@ -181,7 +199,7 @@ function playTrack(url){
     <p><a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">kontakt@dwizzy.space soon!</a></p>
 
     <div class="footer-social">
-      <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
+      <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
       </a>
       <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
@@ -192,6 +210,8 @@ function playTrack(url){
       </a>
     </div>
   </footer>
+
+  </div>
 
 </body>
 </html>
