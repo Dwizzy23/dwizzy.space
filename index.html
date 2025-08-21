@@ -5,33 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dwizzy - Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0d0d0d; color: #fff; }
+    /* Reset i podstawy */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
+    
+    /* Header */
     header { background: #111; padding: 2rem; text-align: center; }
-    header h1 { font-size: 2.5rem; margin: 0; color: #fff; }
-    header p { font-size: 1.2rem; color: #aaa; }
+    header h1 { font-size: 2.5rem; color: #fff; }
+    header p { font-size: 1.2rem; color: #aaa; margin-top: 0.5rem; }
+
+    /* Sekcje */
     section { padding: 2rem; max-width: 900px; margin: auto; }
-    h2 { border-bottom: 2px solid #444; padding-bottom: .5rem; margin-bottom: 1rem; }
-    ul { list-style: none; padding: 0; }
-    ul li { margin: .8rem 0; }
+    h2 { border-bottom: 2px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+
+    /* Listy */
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin: 0.8rem 0; }
     a { color: #1db954; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .button { display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #1db954; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; }
-    footer { background: #111; padding: 1.5rem; text-align: center; color: #aaa; margin-top: 2rem; }
+
+    /* Button */
+    .button { display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #1db954; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+    .button:hover { background: #17a143; }
+
+    /* Opinie */
+    .opinie { padding: 2rem; max-width: 900px; margin: auto; text-align: center; }
+    .opinie img { max-width: 250px; margin: 1rem; border-radius: 10px; }
+
+    /* Footer */
+    footer { background: #111; padding: 2rem; text-align: center; color: #aaa; margin-top: 2rem; }
+    .footer-social { margin-top: 1rem; }
+    .footer-social a { margin: 0 0.5rem; display: inline-block; }
+    .footer-social img { width: 32px; height: 32px; }
+
+    /* Responsywność */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .opinie img { max-width: 100%; margin: 0.5rem 0; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Dwizzy</h1>
     <p>Sound Engineer & Gold Mix & Mastering Engineer</p>
   </header>
 
+  <!-- O MNIE -->
   <section>
     <h2>O mnie</h2>
-    <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach.
- Pracowałem z topowymi newcomerami</p>
+    <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach. Pracowałem z topowymi newcomerami.</p>
   </section>
 
+  <!-- PORTFOLIO OFICJALNE -->
   <section>
     <h2>Portfolio – Oficjalne projekty</h2>
     <ul>
@@ -44,6 +73,7 @@
     </ul>
   </section>
 
+  <!-- PORTFOLIO POPULARNE -->
   <section>
     <h2>Portfolio – Popularne projekty (przed/po)</h2>
     <p><i>Nieoficjalne projekty zmixowane przeze mnie</i></p>
@@ -54,40 +84,38 @@
     </ul>
   </section>
 
+  <!-- BOOK SESSION -->
   <section>
-    <h2>Zabookuj ze mną sesje w studio!</h2>
+    <h2>Zabookuj ze mną sesję w studio!</h2>
     <a class="button" href="https://flightcore.dwizzy.space" target="_blank">Umów sesję</a>
   </section>
 
-
-  <!-- Opinie -->
-  <div class="section">
+  <!-- OPINIE -->
+  <section class="opinie">
     <h2>⭐ OPINIE ⭐</h2>
     <img src="https://i.ibb.co/bMTWP8cR/opinia1.png" alt="opinia 1" />
     <img src="https://i.ibb.co/QFRr57HL/opinia2.png" alt="opinia 2" />
     <img src="https://i.ibb.co/6zZm0BC/opinia3.png" alt="opinia 3" />
-  </div>
+  </section>
 
-<!-- Kontakt -->
-<footer>
-  <h2>Kontakt</h2>
-  <p>Masz pytania? Skontaktuj się ze mną:</p>
+  <!-- FOOTER -->
+  <footer>
+    <h2>Kontakt</h2>
+    <p>Masz pytania? Skontaktuj się ze mną:</p>
+    <p><a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">kontakt@dwizzy.space soon!</a></p>
 
-  <p>
-    <a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">
-      kontakt@dwizzy.space soon!
-    </a>
-  </p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+      </a>
+      <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+    </div>
+  </footer>
 
-  <div class="footer-social">
-    <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon" />
-    </a>
-    <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon" />
-    </a>
-    <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon" />
-    </a>
-  </div>
-</footer>
+</body>
+</html>
