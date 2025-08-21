@@ -61,17 +61,31 @@
   </section>
 
   <!-- PORTFOLIO OFICJALNE -->
+
 <section>
   <h2>Portfolio</h2>
-  <ul>
-    <li>
-      Rusina - LOYALTY MIXTAPE (prod. Learnhowtohustle, Lister, Dodowhatstheword feat. Vkie)<br>
-      <audio controls>
-        <source src="https://drive.google.com/uc?export=download&id=1lFSVsIJeNRb6CTtK1Lb7mymvHvS9PGW3&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
+<h2>Loyalty Mixtape</h2>
+
+<audio id="player" controls>
+  <source src="https://www.dropbox.com/s/utwor1/track1.mp3?raw=1" type="audio/mpeg">
+  Twoja przeglądarka nie wspiera odtwarzania audio.
+</audio>
+
+<ul>
+  <li><a href="#" onclick="playTrack('https://www.dropbox.com/scl/fi/bczlu7v52msw6xunjeflu/RUSINA-BIORE-TO-CO-MOJE-MIXED-corected.wav?rlkey=hyyjuig1d62zl1ki2ijbrs6j0&st=u9hz4iuy?raw=1')">BIORE TO CO MOJE</a></li>
+  <li><a href="#" onclick="playTrack('https://www.dropbox.com/s/utwor2/track2.mp3?raw=1')">Track 2</a></li>
+  <li><a href="#" onclick="playTrack('https://www.dropbox.com/s/utwor3/track3.mp3?raw=1')">Track 3</a></li>
+  <!-- dodaj resztę do Track 26 -->
+</ul>
+
+<script>
+function playTrack(url){
+  var player = document.getElementById('player');
+  player.src = url;
+  player.play();
+}
+</script>
+
       Sheder & MVTI - TONĘ (prod. UK)<br>
       <audio controls>
         <source src="https://drive.google.com/uc?export=download&id=1299rFm0gxlTxD5uKeiZGpWP3kHDV5jP6&raw=1" type="audio/wav">
