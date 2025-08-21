@@ -1,265 +1,235 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Dwizzy</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta charset="UTF-8">
+  <title>Dwizzy – Mixing & Mastering Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1, h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #00b894;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background: #019875;
-    }
-
-    .section {
-      margin: 40px 0;
-    }
-
-    audio, iframe, img {
-      max-width: 90%;
-      margin: 10px 0;
-    }
-
-    ul#playlist {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    ul#playlist li {
-      padding: 8px 12px;
-      margin: 4px 0;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    ul#playlist li:hover {
-      background: #00b894;
-      color: #000;
-    }
-
-    footer {
       background: #000;
-      padding: 20px;
+      color: #fff;
+      margin: 0;
+      padding: 0;
     }
-
-    .footer-social {
-      margin-top: 10px;
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #111, #222);
     }
-
-    .footer-social a {
-      margin: 0 10px;
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #444;
       display: inline-block;
+      padding-bottom: 5px;
     }
 
+    /* Track player styles */
+    .track {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.08);
+      text-align: left;
+    }
+    .track p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .play-btn {
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.2s;
+    }
+    .play-btn:hover {
+      background: #ff0066;
+      color: #fff;
+    }
+    .progress {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 5px;
+      background: #444;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .progress::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+    .time {
+      font-size: 14px;
+      min-width: 40px;
+      text-align: right;
+    }
+
+    /* Opinie */
+    .section img {
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #111;
+    }
+    .footer-social {
+      margin-top: 15px;
+    }
     .social-icon {
-      width: 30px;
-      height: 30px;
-      filter: invert(100%);
-      transition: filter 0.3s;
+      width: 40px;
+      margin: 0 8px;
+      transition: transform 0.2s;
     }
-
     .social-icon:hover {
-      filter: brightness(0.7);
+      transform: scale(1.2);
     }
   </style>
 </head>
-
 <body>
-  
+
+  <header>
+    <h1>Dwizzy – Mixing & Mastering</h1>
+    <p>Inżynier dźwięku – Flightcore Studios, Warszawa</p>
+  </header>
+
+  <!-- Portfolio / Tracki -->
   <div class="section">
-    <h2>Artyści z którymi współpracowałem</h2>
+    <h2>🎧 Portfolio</h2>
+
+    <div class="track">
+      <p>Kosjusz – INSOMNIA 2 (prod. Dwizzy)</p>
+      <div class="player">
+        <button class="play-btn">▶</button>
+        <input type="range" class="progress" value="0" step="0.1">
+        <span class="time">0:00</span>
+      </div>
+      <audio src="tracks/insomnia2.wav"></audio>
+    </div>
+
+    <div class="track">
+      <p>Waimą – Example Track</p>
+      <div class="player">
+        <button class="play-btn">▶</button>
+        <input type="range" class="progress" value="0" step="0.1">
+        <span class="time">0:00</span>
+      </div>
+      <audio src="tracks/waima.wav"></audio>
+    </div>
+
+    <div class="track">
+      <p>Rusiną – Example Track</p>
+      <div class="player">
+        <button class="play-btn">▶</button>
+        <input type="range" class="progress" value="0" step="0.1">
+        <span class="time">0:00</span>
+      </div>
+      <audio src="tracks/rusina.wav"></audio>
+    </div>
+
   </div>
 
-  <!-- NOWA PLAYLISTA 26 UTWORÓW -->
-<div class="section" style="background:#222; padding:20px; border-radius:10px;">
-  <h2>RUSINA - LOYALTY MIXTAPE feat VKIE | prod Learnhowtohustle, Lister, Dodowhatstheword</h2>
-<div class="section">
-  <div class="artist-container">
-    <h2 class="artist-name">RUSINA</h2>
-    <div class="artist-links">
-      <a href="https://instagram.com/rusinarusinarusina" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://open.spotify.com/artist/5QQGdYIcd5A2PRcG42eNdQ" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
-      </a>
-      <a href="https://www.youtube.com/@rusinarusinarusina" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
+  <!-- Studio -->
+  <div class="section">
+    <h2>🎚️ Studio</h2>
+    <div style="text-align:center;">
+      <img src="https://flightcore.pl/wp-content/uploads/2024/02/flightcore_logo.png" alt="Flightcore Studios" style="max-width:200px; margin-bottom:10px;" />
+      <p>Na co dzień rozwijam swoje umiejętności w <b>Flightcore Studios</b> w Warszawie.</p>
     </div>
   </div>
-  <iframe width="70%" height="650" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1877946401&color=%23ff5500&auto_play=false&show_comments=true&visual=true"></iframe>
-</div>
-
-
-  <!-- Przykładowe miksy -->
-  <style>
-  .artist-links {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: flex;
-    gap: 8px;
-    margin-top: 4px;
-  }
-
-  .artist-name:hover + .artist-links,
-  .artist-links:hover {
-    opacity: 1;
-  }
-
-  .artist-links a img {
-    width: 20px;
-    height: 20px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-  }
-
-  .artist-links a:hover img {
-    filter: none;
-    transform: scale(1.2);
-  }
-
-  .artist-container {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-</style>
-
-
-  
-<div class="section">
-  <div class="artist-container">
-    <h2 class="artist-name">SHEDER & MVTI - TONĘ prod UK</h2>
-    <div class="artist-links">
-      <a href="https://instagram.com/sheder_7" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://open.spotify.com/artist/4hoQxNaXyp8gVSynuqDQOt?si=Os6Kjz81QIujnt253E1SAQ" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
-      </a>
-      <a href="http://youtube.com/@SHEDER7" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
-    </div>
-  </div>
-  <audio controls>
-    <source src="https://www.dropbox.com/scl/fi/rkbcpcdc8t8o37qpu1o4a/sheder-mvti-tone-prod.-uk-mastered.wav?raw=1" type="audio/wav">
-  </audio>
-</div>
-
-<div class="section">
-  <div class="artist-container">
-    <h2 class="artist-name">KOSJUSZ & FEKIR - PSYCHOPATA</h2>
-    <div class="artist-links">
-  <a href="https://instagram.com/kosjusz" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Kosjusz" />
-  </a>
-  <a href="https://instagram.com/fekirski" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Fekir" />
-  </a>
-</a>
-      <a href="https://open.spotify.com/artist/zzz" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
-      </a>
-      <a href="https://www.youtube.com/@65kosa" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-        <a href="https://www.youtube.com/@fekirski" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
-    </div>
-  </div>
-  <audio controls>
-    <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master.wav?raw=1" type="audio/wav">
-  </audio>
-</div>
-
-<img src="https://i.ibb.co/7tCqggBL/image.png" alt="VIEWS SPOTIFY KOSJUSZ FEKIR" />
-
-<div class="section">
-  <div class="artist-container">
-    <h2 class="artist-name">KOSJUSZ - DLACZEGO</h2>
-    <div class="artist-links">
-      <a href="https://instagram.com/kosjusz" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://open.spotify.com/artist/3emdMklnOiAGEhBHXf2PxP" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
-      </a>
-      <a href="https://www.youtube.com/@65kosa" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
-    </div>
-  </div>
-  <audio controls>
-    <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?raw=1" type="audio/wav">
-  </audio>
-</div>
-
 
   <!-- Opinie -->
   <div class="section">
-    <h2>⭐ OPINIE ⭐</h2>
+    <h2>⭐ Opinie ⭐</h2>
     <img src="https://i.ibb.co/bMTWP8cR/opinia1.png" alt="opinia 1" />
     <img src="https://i.ibb.co/QFRr57HL/opinia2.png" alt="opinia 2" />
     <img src="https://i.ibb.co/6zZm0BC/opinia3.png" alt="opinia 3" />
   </div>
 
-<!-- Kontakt -->
-<footer>
-  <h2>Kontakt</h2>
-  <p>Masz pytania? Skontaktuj się ze mną:</p>
+  <!-- Kontakt -->
+  <footer>
+    <h2>Kontakt</h2>
+    <p>Masz pytania? Skontaktuj się ze mną:</p>
+    <p>
+      <a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">
+        kontakt@dwizzy.space
+      </a>
+    </p>
 
-  <p>
-    <a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">
-      kontakt@dwizzy.space soon!
-    </a>
-  </p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon" />
+      </a>
+      <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon" />
+      </a>
+    </div>
+  </footer>
 
-  <div class="footer-social">
-    <a href="https://www.instagram.com/dwizzy23_" target="_blank" title="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon" />
-    </a>
-    <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon" />
-    </a>
-    <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon" />
-    </a>
-  </div>
-</footer>
+  <script>
+    document.querySelectorAll(".track").forEach(track => {
+      const audio = track.querySelector("audio");
+      const playBtn = track.querySelector(".play-btn");
+      const progress = track.querySelector(".progress");
+      const time = track.querySelector(".time");
+
+      playBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          document.querySelectorAll("audio").forEach(a => { a.pause(); a.currentTime = a.currentTime; });
+          audio.play();
+          document.querySelectorAll(".play-btn").forEach(btn => btn.textContent = "▶");
+          playBtn.textContent = "⏸";
+        } else {
+          audio.pause();
+          playBtn.textContent = "▶";
+        }
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        progress.value = (audio.currentTime / audio.duration) * 100;
+        let mins = Math.floor(audio.currentTime / 60);
+        let secs = Math.floor(audio.currentTime % 60).toString().padStart(2, "0");
+        time.textContent = `${mins}:${secs}`;
+      });
+
+      progress.addEventListener("input", () => {
+        audio.currentTime = (progress.value / 100) * audio.duration;
+      });
+    });
+  </script>
+
+</body>
+</html>
