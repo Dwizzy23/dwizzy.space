@@ -4,214 +4,338 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dwizzy - Portfolio</title>
+  
+  <!-- Favicon (DreamWorks-style avatar) -->
+  <link rel="icon" href="https://i.ibb.co/Yh8jVHv/avatar-dreamworks.png" type="image/png">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  
   <style>
     /* Reset i podstawy */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: #fff;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: #F4EDFF;
       line-height: 1.6;
-
-      /* Wyśrodkowanie całej zawartości */
+      /* Purple Flightcore gradient */
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(157, 78, 221, 0.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(0, 229, 255, 0.20), transparent 60%),
+                  linear-gradient(135deg, #0a021a 0%, #1a0530 45%, #2b0a3d 70%, #3b0c53 100%);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      align-items: flex-start;
+      padding: 40px 16px;
+      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 900px;
-      width: 100%;
+    .container { max-width: 1120px; width: 100%; display: grid; gap: 28px; }
+
+    /* Glassmorphism card */
+    .card {
+      background: rgba(15, 8, 30, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(157, 78, 221, 0.18);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+      border-radius: 20px;
+      padding: 28px;
     }
-    
+
     /* Header */
-    header { background: #111; padding: 2rem; text-align: center; }
-    header h1 { font-size: 2.5rem; color: #fff; }
-    header p { font-size: 1.2rem; color: #aaa; margin-top: 0.5rem; }
+    header.card { text-align: center; position: relative; overflow: hidden; }
+    .avatar { width: 92px; height: 92px; border-radius: 50%; border: 2px solid rgba(0,229,255,0.6);
+      box-shadow: 0 0 24px rgba(157, 78, 221, 0.6), 0 0 48px rgba(0,229,255,0.25);
+      display: inline-block; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%{ transform: translateY(0px);} 50%{ transform: translateY(-6px);} 100%{ transform: translateY(0px);} }
+
+    .title {
+      margin-top: 14px;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #E6CCFF, #9D4EDD 35%, #00E5FF 70%, #C77DFF);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 24px rgba(157,78,221,0.25);
+    }
+    .subtitle { color: #C7B6FF; opacity: 0.85; margin-top: 6px; font-weight: 600; }
 
     /* Sekcje */
-    section { padding: 2rem; max-width: 900px; margin: auto; }
-    h2 { border-bottom: 2px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    section.card h2 { color: #EBD9FF; border-bottom: 1px dashed rgba(157,78,221,0.35); padding-bottom: 10px; margin-bottom: 16px; }
+
+    /* Linki & przyciski */
+    a { color: #9DFFDE; text-decoration: none; transition: 0.25s ease; }
+    a:hover { color: #00E5FF; text-shadow: 0 0 10px rgba(0,229,255,0.45); }
+    .button { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; padding: 14px 22px; border-radius: 999px; font-weight: 700;
+      background: linear-gradient(135deg, #9D4EDD, #00E5FF);
+      box-shadow: 0 12px 30px rgba(157,78,221,0.35);
+      color: #0B0816; border: none; }
+    .button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 18px 36px rgba(0,229,255,0.35); }
 
     /* Listy */
     ul { list-style: none; padding-left: 0; }
-    ul li { margin: 0.8rem 0; }
-    a { color: #1db954; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Button */
-    .button { display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #1db954; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
-    .button:hover { background: #17a143; }
+    ul li { margin: 12px 0; }
 
     /* Opinie */
-    .opinie { padding: 2rem; max-width: 900px; margin: auto; text-align: center; }
-    .opinie img { max-width: 250px; margin: 1rem; border-radius: 10px; }
+    .opinie { text-align: center; }
+    .opinie img { max-width: 260px; width: 100%; border-radius: 14px; margin: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
 
-    /* Footer */
-    footer { background: #111; padding: 2rem; text-align: center; color: #aaa; margin-top: 2rem; }
-    .footer-social { margin-top: 1rem; }
-    .footer-social a { margin: 0 0.5rem; display: inline-block; }
-    .footer-social img { width: 32px; height: 32px; }
+    /* FOOTER */
+    footer.card { text-align: center; color: #D7CFFF; }
+    .footer-social { margin-top: 12px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .footer-social a img { width: 32px; height: 32px; filter: drop-shadow(0 0 8px rgba(157,78,221,0.6)); transition: transform .2s ease; }
+    .footer-social a img:hover { transform: translateY(-2px) scale(1.06); }
 
-    /* Responsywność */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      .opinie img { max-width: 100%; margin: 0.5rem 0; }
+    /* --- Custom Audio Player (Purple/Green Flightcore) --- */
+    .tracklist li { display: grid; gap: 10px; }
+    audio { display: none; }
+    .player {
+      display: grid; grid-template-columns: 48px 1fr auto; gap: 14px; align-items: center;
+      background: rgba(22, 12, 38, 0.65);
+      border: 1px solid rgba(157,78,221,0.28);
+      border-radius: 14px; padding: 12px 14px; position: relative;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 6px 20px rgba(0,0,0,0.35);
     }
+    .play { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; border: none;
+      background: radial-gradient(60% 60% at 50% 50%, #9D4EDD, #00E5FF);
+      box-shadow: 0 8px 20px rgba(157,78,221,0.45), 0 0 24px rgba(0,229,255,0.3);
+      color: #0B0816; }
+    .play:active { transform: scale(0.98); }
+
+    .meta { display: grid; gap: 4px; }
+    .track-title { font-weight: 700; color: #F2E8FF; }
+    .progress { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; position: relative; }
+    .bar { height: 100%; width: 0%; background: linear-gradient(90deg, #9D4EDD, #00E5FF); box-shadow: 0 0 12px rgba(0,229,255,0.6); }
+    .time { font-variant-numeric: tabular-nums; font-weight: 600; color: #C7B6FF; opacity: 0.9; }
+
+    /* Responsive */
+    @media (max-width: 640px){ .player{ grid-template-columns: 48px 1fr; grid-template-rows: auto auto; } .time{ justify-self: end; } }
   </style>
 </head>
 <body>
 
   <div class="container">
 
-  <!-- HEADER -->
-  <header>
-    <h1>Dwizzy</h1>
-    <p>Sound Engineer & Gold Mix Mastering Engineer</p>
-  </header>
+    <!-- HEADER (zachowujemy treści, dodajemy avatar + nowy styl) -->
+    <header class="card">
+      <img class="avatar" src="https://i.ibb.co/Yh8jVHv/avatar-dreamworks.png" alt="Avatar Dwizzy" />
+      <h1 class="title">Dwizzy</h1>
+      <p class="subtitle">Sound Engineer & Gold Mix Mastering Engineer</p>
+    </header>
 
-  <!-- FOOTER -->
-  <footer>
-    <h2>Kontakt</h2>
-    <p>Skontaktuj się ze mną:</p>
-    <p><a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">kontakt@dwizzy.space soon!</a></p>
+    <!-- "Kontakt" blok #1 (zachowany) -->
+    <footer class="card">
+      <h2>Kontakt</h2>
+      <p>Skontaktuj się ze mną:</p>
+      <p><a href="mailto:kontakt@dwizzy.space" title="Email">kontakt@dwizzy.space soon!</a></p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+        </a>
+        <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+      </div>
+    </footer>
 
-    <div class="footer-social">
-      <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
-      </a>
-      <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
-    </div>
-  </footer>
+    <!-- O MNIE (zachowane) -->
+    <section class="card">
+      <h2>O mnie</h2>
+      <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach. Pracowałem z topowymi newcomerami.</p>
+    </section>
 
-  <!-- O MNIE -->
-  <section>
-    <h2>O mnie</h2>
-    <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach. Pracowałem z topowymi newcomerami.</p>
-  </section>
+    <!-- PORTFOLIO OFICJALNE (zachowane + ulepszone style) -->
+    <section class="card">
+      <h2>Portfolio</h2>
+      <h2>Rusina – LOYALTY MIXTAPE</h2>
 
-  <!-- PORTFOLIO OFICJALNE -->
+      <iframe width="100%" height="600" scrolling="no" frameborder="0" allow="autoplay"
+        style="border-radius: 14px; box-shadow: 0 10px 28px rgba(0,0,0,0.4);"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape&color=%239D4EDD&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
 
-<section>
-  <h2>Portfolio</h2>
-<h2>Rusina – LOYALTY MIXTAPE</h2>
+      <script>
+      function playTrack(url){
+        var player = document.getElementById('player');
+        if(player){ player.src = url; player.play(); }
+      }
+      </script>
 
-<iframe width="100%" height="600" scrolling="no" frameborder="no" allow="autoplay"
-  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape&color=%231db954&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-</iframe>
+      <!-- Oryginalne tracki – nic nie usuwamy, tylko opakowujemy listą i dokładamy custom player -->
+      <ul class="tracklist">
+        <li>
+          Sheder & MVTI - TONĘ (prod. UK)<br>
+          <audio controls>
+            <source src="https://drive.google.com/uc?export=download&id=1299rFm0gxlTxD5uKeiZGpWP3kHDV5jP6&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          Kosjusz & Fekir - PSYCHOPATA<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master-i-zespojenie-calego-numeru-zeby-jakos-brzmial-XD.wav?rlkey=98u7wm3wicxivbup8dqzlxil9&st=tajxteca&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          MłodyBA & Rusina - Być tu kimś więcej (feat. DOMI)<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/y7kfwfkokx2owftqn0sdo/m-odyBA-Rusina-By-tu-kim-wiecej-feat.-DOMI-NRNF-dwizzy.wav-mixed-it.wav?rlkey=cx8at7ume7tcvjhzk74q0gv5d&st=0mnvetty&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          Kosjusz - Dlaczego<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?rlkey=h24rgd94ftz2132dh7rdn0zrq&st=s871mygw&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          Także Waima, Okekel, Wavyzien, Akio – niektóre utwory nie zostały wydane lub są starymi projektami które prawdopodobnie nie ujrza swiatła dziennego
+        </li>
+      </ul>
+    </section>
 
-<script>
-function playTrack(url){
-  var player = document.getElementById('player');
-  player.src = url;
-  player.play();
-}
-</script>
+    <!-- PORTFOLIO POPULARNE (zachowane) -->
+    <section class="card">
+      <h2>Portfolio – Popularne projekty (przed/po)</h2>
+      <p><i>Nieoficjalne projekty zmixowane przeze mnie</i></p>
+      <ul class="tracklist">
+        <li>
+          Malik Montana, Kazior - Opener (prod. CUZCO$, cuty Dj.Frodo) [TAX FREE]<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/olbmy583toavutluv5t3f/Tax-Free-Opener-dwiyyz23-miasttered-2323456432333444.wav?rlkey=0rni56qnwjq43asdctmx4zx6i&st=863sqq0a&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          Sheder - Nigdy więcej broke (prod. Lister)<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/6nhfolcxol1d5g0nesr8e/SHEDER-NIGDY-WIECEJ-BROKE-dwizzy23_-2-V.wav?rlkey=9sytr1hq5iqkrx0ktjwulwyxx&st=mbflilzt&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+        <li>
+          Vkie - Bierz to na wolno (prod. Lil Santiago)<br>
+          <audio controls>
+            <source src="https://www.dropbox.com/scl/fi/xifldidwe43u4e02vsp4q/vkie-bierz-to-na-wolno-mixed-it-dwizzy.wav?rlkey=2fxqjx5mztssi5ywivpfd4mip&st=kpt9rcwj&raw=1" type="audio/wav">
+            Twoja przeglądarka nie wspiera odtwarzacza audio.
+          </audio>
+        </li>
+      </ul>
+    </section>
 
-      Sheder & MVTI - TONĘ (prod. UK)<br>
-      <audio controls>
-        <source src="https://drive.google.com/uc?export=download&id=1299rFm0gxlTxD5uKeiZGpWP3kHDV5jP6&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      Kosjusz & Fekir - PSYCHOPATA<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/h1hnondxnp1v4grkvy7yr/KOSJUSZ-x-FEKIR-PSYCHOPATA-master-i-zespojenie-calego-numeru-zeby-jakos-brzmial-XD.wav?rlkey=98u7wm3wicxivbup8dqzlxil9&st=tajxteca&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      MłodyBA & Rusina - Być tu kimś więcej (feat. DOMI)<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/y7kfwfkokx2owftqn0sdo/m-odyBA-Rusina-By-tu-kim-wiecej-feat.-DOMI-NRNF-dwizzy.wav-mixed-it.wav?rlkey=cx8at7ume7tcvjhzk74q0gv5d&st=0mnvetty&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      Kosjusz - Dlaczego<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/8i4mrb9izlkymc6to3k7v/house-kosjusz-3.wav?rlkey=h24rgd94ftz2132dh7rdn0zrq&st=s871mygw&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      Także Waima, Okekel, Wavyzien, Akio – niektóre utwory nie zostały wydane lub są starymi projektami które prawdopodobnie nie ujrza swiatła dziennego
-    </li>
-  </ul>
-</section>
+    <!-- BOOK SESSION (zachowane) -->
+    <section class="card">
+      <h2>Zabookuj ze mną sesję w studio!</h2>
+      <a class="button" href="https://flightcore.dwizzy.space" target="_blank">Umów sesję</a>
+    </section>
 
+    <!-- OPINIE (zachowane) -->
+    <section class="opinie card">
+      <h2>⭐ OPINIE ⭐</h2>
+      <img src="https://i.ibb.co/bMTWP8cR/opinia1.png" alt="opinia 1" />
+      <img src="https://i.ibb.co/QFRr57HL/opinia2.png" alt="opinia 2" />
+      <img src="https://i.ibb.co/6zZm0BC/opinia3.png" alt="opinia 3" />
+    </section>
 
-  <!-- PORTFOLIO POPULARNE -->
-<section>
-  <h2>Portfolio – Popularne projekty (przed/po)</h2>
-  <p><i>Nieoficjalne projekty zmixowane przeze mnie</i></p>
-  <ul>
-    <li>
-      Malik Montana, Kazior - Opener (prod. CUZCO$, cuty Dj.Frodo) [TAX FREE]<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/olbmy583toavutluv5t3f/Tax-Free-Opener-dwiyyz23-miasttered-2323456432333444.wav?rlkey=0rni56qnwjq43asdctmx4zx6i&st=863sqq0a&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      Sheder - Nigdy więcej broke (prod. Lister)<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/6nhfolcxol1d5g0nesr8e/SHEDER-NIGDY-WIECEJ-BROKE-dwizzy23_-2-V.wav?rlkey=9sytr1hq5iqkrx0ktjwulwyxx&st=mbflilzt&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-    <li>
-      Vkie - Bierz to na wolno (prod. Lil Santiago)<br>
-      <audio controls>
-        <source src="https://www.dropbox.com/scl/fi/xifldidwe43u4e02vsp4q/vkie-bierz-to-na-wolno-mixed-it-dwizzy.wav?rlkey=2fxqjx5mztssi5ywivpfd4mip&st=kpt9rcwj&raw=1" type="audio/wav">
-        Twoja przeglądarka nie wspiera odtwarzacza audio.
-      </audio>
-    </li>
-  </ul>
-</section>
-
-  <!-- BOOK SESSION -->
-  <section>
-    <h2>Zabookuj ze mną sesję w studio!</h2>
-    <a class="button" href="https://flightcore.dwizzy.space" target="_blank">Umów sesję</a>
-  </section>
-
-  <!-- OPINIE -->
-  <section class="opinie">
-    <h2>⭐ OPINIE ⭐</h2>
-    <img src="https://i.ibb.co/bMTWP8cR/opinia1.png" alt="opinia 1" />
-    <img src="https://i.ibb.co/QFRr57HL/opinia2.png" alt="opinia 2" />
-    <img src="https://i.ibb.co/6zZm0BC/opinia3.png" alt="opinia 3" />
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <h2>Kontakt</h2>
-    <p>Skontaktuj się ze mną:</p>
-    <p><a href="mailto:kontakt@dwizzy.space" title="Email" style="color: #ffffff; text-decoration: underline;">kontakt@dwizzy.space soon!</a></p>
-
-    <div class="footer-social">
-      <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
-      </a>
-      <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-      </a>
-    </div>
-  </footer>
+    <!-- FOOTER (drugi blok kontaktu – zachowany) -->
+    <footer class="card">
+      <h2>Kontakt</h2>
+      <p>Skontaktuj się ze mną:</p>
+      <p><a href="mailto:kontakt@dwizzy.space" title="Email">kontakt@dwizzy.space soon!</a></p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/dwizzy.wav" target="_blank" title="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@dwizzy23_" target="_blank" title="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+        </a>
+        <a href="https://www.youtube.com/@dwizzy23_i?sub_confirmation=1" target="_blank" title="YouTube">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+      </div>
+    </footer>
 
   </div>
 
+  <!-- Custom Audio Player JS: nic nie usuwa – tylko dodaje UI nad ukrytym <audio> -->
+  <script>
+    (function(){
+      const format = (s)=>{
+        if(isNaN(s)) return '0:00';
+        const m = Math.floor(s/60); const r = Math.floor(s%60); return m+':' + (r<10?'0':'') + r;
+      };
+
+      const audios = Array.from(document.querySelectorAll('ul.tracklist li'));
+      const allAudioEls = [];
+
+      audios.forEach(li=>{
+        const audio = li.querySelector('audio');
+        if(!audio) return;
+        allAudioEls.push(audio);
+
+        // Pobierz tytuł z treści <li> przed <audio>
+        let title = '';
+        for(const n of li.childNodes){ if(n.nodeType === Node.TEXT_NODE){ title = (title + ' ' + n.textContent).trim(); } if(n.nodeName === 'AUDIO') break; }
+        if(!title) title = 'Nieznany tytuł';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'player';
+        wrapper.innerHTML = `
+          <button class="play" aria-label="Play/Pause">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="meta">
+            <div class="track-title">${title}</div>
+            <div class="progress"><div class="bar"></div></div>
+          </div>
+          <div class="time"><span class="cur">0:00</span> / <span class="dur">0:00</span></div>
+        `;
+
+        // Wstaw player tuż przed audio, audio zostaje ukryte
+        audio.parentNode.insertBefore(wrapper, audio);
+
+        const btn = wrapper.querySelector('.play');
+        const bar = wrapper.querySelector('.bar');
+        const cur = wrapper.querySelector('.cur');
+        const dur = wrapper.querySelector('.dur');
+        const progress = wrapper.querySelector('.progress');
+
+        const pauseOthers = ()=>{
+          allAudioEls.forEach(a=>{ if(a!==audio){ a.pause(); a._btn && (a._btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'); }});
+        };
+
+        btn.addEventListener('click', ()=>{
+          if(audio.paused){ pauseOthers(); audio.play(); }
+          else { audio.pause(); }
+        });
+
+        audio.addEventListener('play', ()=>{ btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>'; });
+        audio.addEventListener('pause', ()=>{ btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'; });
+        audio.addEventListener('loadedmetadata', ()=>{ dur.textContent = format(audio.duration); });
+        audio.addEventListener('timeupdate', ()=>{
+          cur.textContent = format(audio.currentTime);
+          const p = (audio.currentTime / (audio.duration||1)) * 100; bar.style.width = p + '%';
+        });
+
+        progress.addEventListener('click', (e)=>{
+          const rect = progress.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          audio.currentTime = x * (audio.duration||0);
+        });
+
+        // zapamiętaj przycisk by móc zmieniać ikonę przy pauseOthers
+        audio._btn = btn;
+      });
+    })();
+  </script>
 </body>
 </html>
