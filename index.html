@@ -150,36 +150,97 @@
       <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach. Pracowałem z topowymi newcomerami oraz Mozna umowic sie ze mna na sesje we Flightcore Studios w Warszawie</p>
     </section>
 
-    <!-- PORTFOLIO OFICJALNE (zachowane + ulepszone style) -->
-    <section class="card">
-      <h2>Portfolio</h2>
-      <h2>Rusina – LOYALTY MIXTAPE</h2>
-<div class="image-slider">
+  <!-- PORTFOLIO OFICJALNE -->
+<section class="card">
+  <h2>Portfolio</h2>
+  <h2>Rusina – LOYALTY MIXTAPE</h2>
+
+  <!-- SLIDER -->
+  <div class="slider">
     <div class="slides">
-      <a href="https://ibb.co/FLSjR0Yx" target="_blank"><img src="https://i.ibb.co/YFzqHydR/1.jpg" alt="1"></a>
-      <a href="https://ibb.co/DHMqX8yh" target="_blank"><img src="https://i.ibb.co/q3gZGWfK/2.jpg" alt="2"></a>
-      <a href="https://ibb.co/XkGLJdYv" target="_blank"><img src="https://i.ibb.co/bRGmdyb8/3.jpg" alt="3"></a>
-      <a href="https://ibb.co/xt0gsVhR" target="_blank"><img src="https://i.ibb.co/ZpPgJydk/4.jpg" alt="4"></a>
-      <a href="https://ibb.co/WpPmp0vP" target="_blank"><img src="https://i.ibb.co/CsMRs6KM/5.jpg" alt="5"></a>
-      <a href="https://ibb.co/jP8ZNsND" target="_blank"><img src="https://i.ibb.co/XrWkQMQt/6.jpg" alt="6"></a>
-      <img src="https://i.ibb.co/k2GK477r/loyalty-cd-dwizzy-space.png" alt="loyalty cd dwizzy.space">
-      <img src="https://i.ibb.co/VpryhvxV/image.png" alt="2 photo loyalty definiation">
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/gbFyYZcd/bluza-min-removebg-preview.png" alt="bluza-min-removebg-preview" border="0"></a>
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/4wm6mJtK/spodnie-min-removebg-preview.png" alt="spodnie-min-removebg-preview" border="0"></a>
+      <div class="slide"><img src="https://i.ibb.co/YFzqHydR/1.jpg" alt="1"></div>
+      <div class="slide"><img src="https://i.ibb.co/q3gZGWfK/2.jpg" alt="2"></div>
+      <div class="slide"><img src="https://i.ibb.co/bRGmdyb8/3.jpg" alt="3"></div>
+      <div class="slide"><img src="https://i.ibb.co/ZpPgJydk/4.jpg" alt="4"></div>
+      <div class="slide"><img src="https://i.ibb.co/CsMRs6KM/5.jpg" alt="5"></div>
+      <div class="slide"><img src="https://i.ibb.co/XrWkQMQt/6.jpg" alt="6"></div>
+      <div class="slide"><img src="https://i.ibb.co/k2GK477r/loyalty-cd-dwizzy-space.png" alt="loyalty cd dwizzy.space"></div>
+      <div class="slide"><img src="https://i.ibb.co/VpryhvxV/image.png" alt="2 photo loyalty definition"></div>
+      <div class="slide"><img src="https://i.ibb.co/gbFyYZcd/bluza-min-removebg-preview.png" alt="Bluza"></div>
+      <div class="slide"><img src="https://i.ibb.co/4wm6mJtK/spodnie-min-removebg-preview.png" alt="Spodnie"></div>
     </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
-      <iframe width="120%" height="300" scrolling="no" frameborder="0" allow="autoplay"
-        style="border-radius: 14px; box-shadow: 0 10px 28px rgba(0,0,0,0.4);"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape&color=%239D4EDD&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-      </iframe>
 
-      <script>
-      function playTrack(url){
-        var player = document.getElementById('player');
-        if(player){ player.src = url; player.play(); }
-      }
-      </script>
+  <style>
+    .slider {
+      position: relative;
+      max-width: 720px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+    .slide img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10,5,25,0.6);
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: 0.2s;
+    }
+    .slider button:hover {
+      background: rgba(157,78,221,0.85);
+    }
+    .prev { left: 12px; }
+    .next { right: 12px; }
+  </style>
 
+  <script>
+    const slider = document.querySelector('.slider');
+    const slides = slider.querySelector('.slides');
+    const slide = slider.querySelectorAll('.slide');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i){
+      if(i < 0) index = slide.length - 1;
+      else if(i >= slide.length) index = 0;
+      else index = i;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', ()=>showSlide(index - 1));
+    nextBtn.addEventListener('click', ()=>showSlide(index + 1));
+
+    // sterowanie klawiaturą
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') showSlide(index - 1);
+      if(e.key === 'ArrowRight') showSlide(index + 1);
+    });
+  </script>
+</section>
       <!-- Oryginalne tracki – nic nie usuwamy, tylko opakowujemy listą i dokładamy custom player -->
       <ul class="tracklist">
         <li>
