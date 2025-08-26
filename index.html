@@ -152,17 +152,29 @@
       <p>Jestem inżynierem dźwięku specjalizującym się w miksie i masteringu nowoczesnej muzyki. Moim priorytetem jest czystość brzmienia, energia i tłuste uderzenie, które dobrze sprawdza się zarówno na słuchawkach, jak i dużych scenach. Pracowałem z topowymi newcomerami oraz Mozna umowic sie ze mna na sesje we Flightcore Studios w Warszawie</p>
     </section>
 
-    <section class="card" style="text-align: center; margin: 0 auto; max-width: 400px;">
-      <h2>RUSINA - LOYALTY MIXTAPE</h2>
-    </section>
+  <section class="card">
+  <h2 style="text-align: center;">RUSINA - LOYALTY MIXTAPE</h2>
+</section>
 
-<!-- LOYALTY.CLOTHING MERCH I CD -->
-<section class="card" style="text-align: center;
-  <a class="button" href="https://loyalty.clothing" target="_blank">Merch + CD</a>
+<div style="text-align: center; margin: 20px 0;">
+  <iframe 
+    width="600" 
+    height="500" 
+    scrolling="no" 
+    frameborder="no" 
+    allow="autoplay" 
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape&color=00FF00&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+  </iframe>
+</div>
+
+<section class="card" style="text-align: center; margin: 20px auto; max-width: 720px;">
+  <a class="button" href="https://loyalty.clothing" target="_blank" style="display: inline-block; margin-bottom: 15px; padding: 10px 20px; background-color: #00FF00; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold;">
+    Merch + CD
+  </a>
   <a href="https://loyalty.clothing" target="_blank">
     <img src="https://i.ibb.co/qFF1Y7QN/image.png" 
          alt="Loyalty Clothing" 
-         style="display: block; margin: 20px auto 0 auto; max-width: 100%;">
+         style="display: block; margin: 0 auto 20px auto; max-width: 100%; border-radius: 12px;">
   </a>
 
   <!-- SLIDER -->
@@ -182,85 +194,75 @@
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
+</section>
 
-<div style="text-align: center;">
-  <iframe 
-    width="600" 
-    height="500" 
-    scrolling="no" 
-    frameborder="no" 
-    allow="autoplay" 
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rusina-sheder-fan/sets/rusina-loyalty-mixtape&color=00FF00&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
-  </iframe>
-</div>
+<style>
+  .slider {
+    position: relative;
+    max-width: 720px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.6s ease;
+  }
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+  }
+  .slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10,5,25,0.6);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: 0.2s;
+  }
+  .slider button:hover {
+    background: rgba(157,78,221,0.85);
+  }
+  .prev { left: 12px; }
+  .next { right: 12px; }
+</style>
 
-  <style>
-    .slider {
-      position: relative;
-      max-width: 720px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease;
-    }
-    .slide {
-      min-width: 100%;
-      box-sizing: border-box;
-    }
-    .slide img {
-      width: 100%;
-      display: block;
-      border-radius: 16px;
-    }
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(10,5,25,0.6);
-      border: none;
-      color: #fff;
-      font-size: 28px;
-      padding: 8px 14px;
-      cursor: pointer;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: 0.2s;
-    }
-    .slider button:hover {
-      background: rgba(157,78,221,0.85);
-    }
-    .prev { left: 12px; }
-    .next { right: 12px; }
-  </style>
+<script>
+  const slider = document.querySelector('.slider');
+  const slides = slider.querySelector('.slides');
+  const slide = slider.querySelectorAll('.slide');
+  const prevBtn = slider.querySelector('.prev');
+  const nextBtn = slider.querySelector('.next');
+  let index = 0;
 
-  <script>
-    const slider = document.querySelector('.slider');
-    const slides = slider.querySelector('.slides');
-    const slide = slider.querySelectorAll('.slide');
-    const prevBtn = slider.querySelector('.prev');
-    const nextBtn = slider.querySelector('.next');
-    let index = 0;
+  function showSlide(i){
+    if(i < 0) index = slide.length - 1;
+    else if(i >= slide.length) index = 0;
+    else index = i;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
 
-    function showSlide(i){
-      if(i < 0) index = slide.length - 1;
-      else if(i >= slide.length) index = 0;
-      else index = i;
-      slides.style.transform = `translateX(${-index * 100}%)`;
-    }
+  prevBtn.addEventListener('click', ()=>showSlide(index - 1));
+  nextBtn.addEventListener('click', ()=>showSlide(index + 1));
 
-    prevBtn.addEventListener('click', ()=>showSlide(index - 1));
-    nextBtn.addEventListener('click', ()=>showSlide(index + 1));
-
-    // sterowanie klawiaturą
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowLeft') showSlide(index - 1);
-      if(e.key === 'ArrowRight') showSlide(index + 1);
-    });
-  </script>
+  // sterowanie klawiaturą
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowLeft') showSlide(index - 1);
+    if(e.key === 'ArrowRight') showSlide(index + 1);
+  });
+</script>
 <section class="card">
 <!-- Oryginalne tracki – nic nie usuwamy, tylko opakowujemy listą i dokładamy custom player -->
 <ul class="tracklist">
