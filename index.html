@@ -321,6 +321,53 @@ Także Waima, Okekel, Wavyzien, Akio – niektóre utwory nie zostały wydane lu
   </li>
 </ul>
 
+  <div style="text-align:center; margin:40px 0;">
+
+    <button id="playBtn"
+        style="
+            background:#33BC2E;
+            color:#000;
+            border:none;
+            padding:16px 38px;
+            font-size:18px;
+            font-weight:bold;
+            border-radius:12px;
+            cursor:pointer;
+            transition:0.2s;
+            box-shadow:0 0 20px rgba(51,188,46,.35);
+        ">
+        ▶ Odtwórz 
+    </button>
+
+    <audio id="audio">
+        <source src="https://drive.google.com/uc?export=download&id=1n7kreXj-6CA3dmCNf4NVguw3dbD5mBWz" type="audio/wav">
+    </audio>
+
+</div>
+
+<script>
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", async () => {
+    try {
+        if (audio.paused) {
+            await audio.play();
+            playBtn.innerHTML = "⏸ Pauza";
+        } else {
+            audio.pause();
+            playBtn.innerHTML = "▶ Odtwórz";
+        }
+    } catch (e) {
+        alert("Nie udało się odtworzyć pliku. Upewnij się, że plik Google Drive jest udostępniony dla każdego z linkiem.");
+        console.error(e);
+    }
+});
+
+audio.addEventListener("ended", () => {
+    playBtn.innerHTML = "▶ Odtwórz";
+});
+</script>
     <!-- PORTFOLIO POPULARNE (zachowane) -->
       <h2>Portfolio – Popularne projekty (przed/po)</h2>
       <p><i>Nieoficjalne projekty zmixowane przeze mnie</i></p>
